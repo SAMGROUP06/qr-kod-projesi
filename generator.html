@@ -66,5 +66,17 @@
       }
     };
   </script>
+  function exportPDF() {
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF('p', 'pt', 'a4');
+  pdf.html(document.getElementById('out'), {
+    callback: function (doc) {
+      doc.save("QR_Kodlari.pdf");
+    },
+    x: 10,
+    y: 10
+  });
+}
+
 </body>
 </html>
