@@ -25,6 +25,8 @@
     <label>Sıfır doldurma: <input id="pad" type="number" value="4" min="1"></label>
     <button id="run">Oluştur</button>
     <button onclick="window.print()">Yazdır</button>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>;
+<button onclick="exportPDF()">PDF indir</button>;
   </div>
   <div class="grid" id="out"></div>
   <script>
@@ -59,8 +61,7 @@
         const btn=document.createElement('button'); btn.className='dl'; btn.textContent='PNG indir';
         btn.onclick=()=>dlCanvasAsPNG(qr,`ENVANTER_${id}.png`); card.appendChild(btn);
         out.appendChild(card);
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>;
-<button onclick="exportPDF()">PDF indir</button>;
+       
 
       }
     };
