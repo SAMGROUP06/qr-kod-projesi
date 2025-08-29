@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Envanter Görüntüleyici</title>
+  <style>
+    body{font-family:system-ui,Arial,Helvetica,sans-serif;display:grid;place-items:center;height:100dvh;margin:0;background:#fff}
+    .box{text-align:center}
+    .id{font-size:64px;font-weight:800;letter-spacing:2px;margin:0}
+    .sub{color:#666;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1 class="id" id="inv">ENVANTER 0001</h1>
+    <div class="sub">Bu sayfa QR’dan gelinen ID’yi büyük yazıyla gösterir.</div>
+  </div>
+  <script>
+    const p = new URLSearchParams(location.search);
+    const id = (p.get('id') || '0001').toString().padStart(4,'0');
+    document.getElementById('inv').textContent = `ENVANTER ${id}`;
+    document.title = `ENVANTER ${id}`;
+  </script>
+</body>
+</html>
